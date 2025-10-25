@@ -10,8 +10,8 @@ Yes, AI was used for setup, configuration, code, etc.
 ## Installation via Helm/Docker/K8s
 Build image and deploy
 ```bash
-minikube image build -t api:latest -f Dockerfile.api . && \
-helm install api ./charts/api -n portfolio
+minikube image build -t api:latest -f Dockerfile . && \
+helm install api ./charts -n portfolio
 ```
 
 Do a port-forward to test it:
