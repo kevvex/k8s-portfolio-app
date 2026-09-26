@@ -23,7 +23,7 @@ grep docker /etc/group # You should see e.g, docker:x:998:[user]
 Build image and deploy
 ```bash
 minikube image build -t api:latest -f Dockerfile . && \
-helm install api ./charts -n portfolio
+helm install api ./charts -n portfolio --create-namespace
 ```
 
 Do a port-forward to test it:
@@ -35,6 +35,7 @@ curl http://localhost:3000/api
 ## Uninstallation via Helm/Docker/K8s
 ```bash
 helm uninstall api -n portfolio
+minikube kubectl delete namespace portfolio
 ```
 
 ## Minikube commands
