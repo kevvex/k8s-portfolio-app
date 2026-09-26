@@ -1,0 +1,9 @@
+.git
+.bloop
+.bsp
+.idea
+.metals
+.vscode
+**/node_modules
+**/target
+project/project
