@@ -7,6 +7,14 @@ Yes, AI was used for setup, configuration, code, etc.
 - [Install kubectl linux](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
 - [k9s](https://k9scli.io/)
 
+## Prerequisites
+Install Docker and then to avoid typing "sudo docker"
+add it to the usergroup (See [Docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock](https://stackoverflow.com/questions/47854463/docker-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socke)).
+```bash
+sudo usermod -a -G docker $USER
+grep docker /etc/group # You should see e.g, docker:x:998:[user]
+```
+
 ## Installation via Helm/Docker/K8s
 Build image and deploy
 ```bash
