@@ -5,9 +5,9 @@
         </encoder>
     </appender>
 
-    <logger name="RestServer$" level="INFO" additivity="false">
-        <appender-ref ref="STDOUT"/>
-    </logger>
+    <logger name="RestServer$" level="INFO" />
 
-    <root level="OFF"/>
+    <root level="OFF">
+        <appender-ref ref="STDOUT"/>
+    </root>
 </configuration>
