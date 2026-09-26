@@ -20,4 +20,17 @@ spec:
           imagePullPolicy: Never
           ports:
             - containerPort: {{ .Values.service.port }}
-
+          env:
+            - name: JAVA_TOOL_OPTIONS
+              value: -Dlogback.configurationFile=/etc/config/logback.xml
+          volumeMounts:
+            - name: logback-config
+              mountPath: /etc/config
+              readOnly: true
+      volumes:
+        - name: logback-config
+          configMap:
+            name: {{ .Chart.Name }}-config
+            items:
+              - key: logback.xml
+                path: logback.xml

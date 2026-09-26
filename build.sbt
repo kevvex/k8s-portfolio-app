@@ -20,7 +20,8 @@ libraryDependencies ++= Seq(
 
 lazy val root = (project in file("."))
   .settings(
-    name := "k8s-portfolio-app"
+    name := "k8s-portfolio-app",
+    Compile / unmanagedResourceDirectories += baseDirectory.value / "charts" / "files"
   )
 
 Compile / run / fork := true

@@ -8,6 +8,7 @@ COPY project/build.properties ./project/build.properties
 RUN sbt update
 
 COPY src/main ./src/main
+COPY charts/files ./charts/files
 
 RUN sbt compile
 
