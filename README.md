@@ -2,12 +2,16 @@
 
 Yes, AI was used for setup, configuration, code, etc.
 
+## Prerequisites
+- [minikube](https://minikube.sigs.k8s.io/docs/start/?arch=%2Flinux%2Fx86-64%2Fstable%2Fbinary+download)
+- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+- [k9s](https://k9scli.io/) or [k9s - Github](https://github.com/derailed/k9s/releases)
+- [helm](https://helm.sh/)
+
 ## Informational Resources
 - [Docker Local Images Minikube](https://www.baeldung.com/ops/docker-local-images-minikube)
-- [Install kubectl linux](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
-- [k9s](https://k9scli.io/)
 
-## Prerequisites
+### Docker
 Install Docker and then to avoid typing "sudo docker"
 add it to the usergroup (See [Docker: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock](https://stackoverflow.com/questions/47854463/docker-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socke)).
 ```bash
