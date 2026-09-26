@@ -5,8 +5,8 @@ Yes, AI was used for setup, configuration, code, etc.
 ## Prerequisites
 - [minikube](https://minikube.sigs.k8s.io/docs/start/?arch=%2Flinux%2Fx86-64%2Fstable%2Fbinary+download)
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
-- [k9s](https://k9scli.io/) or [k9s - Github](https://github.com/derailed/k9s/releases)
 - [helm](https://helm.sh/)
+- [k9s](https://k9scli.io/) or [k9s - Github](https://github.com/derailed/k9s/releases)
 
 ## Informational Resources
 - [Docker Local Images Minikube](https://www.baeldung.com/ops/docker-local-images-minikube)
@@ -24,6 +24,8 @@ Build image and deploy
 ```bash
 minikube image build -t api:latest -f Dockerfile . && \
 helm install api ./charts -n portfolio --create-namespace
+
+minikube image ls 
 ```
 
 Do a port-forward to test it:
