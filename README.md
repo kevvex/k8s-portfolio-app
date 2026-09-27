@@ -20,12 +20,16 @@ grep docker /etc/group # You should see e.g, docker:x:998:[user]
 ```
 
 ## Installation via Helm/Docker/K8s
-Build image and deploy
-```bash
-minikube image build -t api:latest -f Dockerfile . && \
-helm install api ./charts -n portfolio --create-namespace
+For local development, set `mongodb.auth.username` and `mongodb.auth.password` in `charts/values.yaml` before installing. Keep real credentials out of committed changes.
 
-minikube image ls 
+Build image and deploy:
+```bash
+# Set MongoDB username and password
+MONGO_USERNAME=dev MONGO_PASSWORD=password ./install.sh
+
+# Access MongoDB thorugh
+kubectl exec -it -n portfolio mongodb-0 -- \
+  mongosh -u dev -p --authenticationDatabase admin
 ```
 
 Do a port-forward to test it:
